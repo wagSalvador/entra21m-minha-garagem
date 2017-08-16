@@ -17,7 +17,7 @@ public class Conexao {
     private static final String DRIVER = "com.mysql.jdbc.Driver";
     private static final String HOST = "jdbc:mysql://localhost/minha_garagem";
     private static final String USUARIO = "root";
-    private static final String SENHA = "123hahaha";
+    private static final String SENHA = "";
     
     
     public static Connection conectar(){

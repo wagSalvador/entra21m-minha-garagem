@@ -8,7 +8,7 @@ import java.sql.Date;
  */
 public class Carro {
 
-    private int id, renavam;        
+    private int id, renavam;
     private byte qtdPortas, qtdBatidas;
     private short anoFabricacao, anoLancamento, tipoPneu;
     private String nome, cor, fabricante, placa, chassi, descricao;
