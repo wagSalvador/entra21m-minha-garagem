@@ -64,7 +64,7 @@ public class JFrameInicial extends JFrame implements JFrameComportamentosInterfa
 
             @Override
             public void actionPerformed(ActionEvent e) {
-                 new JFrameCadastroDeCarro().setVisible(true);
+                 new JFrameCadastroCarro().setVisible(true);
                 
             }
         });
