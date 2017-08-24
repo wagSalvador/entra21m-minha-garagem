@@ -5,6 +5,7 @@
         <data xmlns="http://www.netbeans.org/ns/j2se-project/3">
             <name>MinhaGaragem</name>
             <source-roots>
+                <root id="src.resource.dir" name="Resource"/>
                 <root id="src.dir"/>
             </source-roots>
             <test-roots>

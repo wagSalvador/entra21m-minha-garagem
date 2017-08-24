@@ -1,4 +1,3 @@
-
 package view;
 
 import java.awt.event.ActionEvent;
@@ -10,20 +9,21 @@ import javax.swing.JFrame;
  *
  * @author Alunos
  */
-public class JFrameInicial extends JFrame implements JFrameComportamentosInterface{
-    
-    private JButton jButtonListaCarros, jButtonCadastroCarro;
+public class JFrameInicial extends JFrame implements JFrameComportamentosInterface {
 
-    public JFrameInicial(){
+    private JButton jButtonListaCarros, jButtonCadastroCarro, jButtonListaCategorias;
+
+    public JFrameInicial() {
         criarTela();
         criarComponentes();
         definirLocalizacao();
         adicionarComponetes();
         adicionarOnClick();
     }
+
     @Override
     public void criarTela() {
-        setSize(600,300);
+        setSize(600, 300);
         setLayout(null);
         setLocationRelativeTo(null);
         setResizable(false);
@@ -35,43 +35,35 @@ public class JFrameInicial extends JFrame implements JFrameComportamentosInterfa
     public void criarComponentes() {
         jButtonListaCarros = new JButton("Lista de Carros");
         jButtonCadastroCarro = new JButton("Cadastro de Carros");
+        jButtonListaCategorias = new JButton("Lista categorias");
     }
 
     @Override
     public void definirLocalizacao() {
-        jButtonListaCarros.setBounds(10,10,200,35);
-        jButtonCadastroCarro.setBounds(10,55,200,35);
+        jButtonListaCarros.setBounds(10, 10, 200, 35);
+        jButtonCadastroCarro.setBounds(10, 55, 200, 35);
+        jButtonListaCategorias.setBounds(10, 100, 200, 35);
     }
 
     @Override
     public void adicionarComponetes() {
         add(jButtonListaCarros);
         add(jButtonCadastroCarro);
+        add(jButtonListaCategorias);
     }
 
     @Override
     public void adicionarOnClick() {
-        jButtonListaCarros.addActionListener(new ActionListener() {
-
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                JFrameListaCarros lista = new JFrameListaCarros();
-                
-            }
+        jButtonListaCarros.addActionListener((ActionEvent e) -> {
+           // JFrameListaCarros lista = new JFrameListaCarros();
         });
-        
-        jButtonCadastroCarro.addActionListener(new ActionListener() {
 
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                 new JFrameCadastroCarro().setVisible(true);
-                
-            }
+        jButtonCadastroCarro.addActionListener((ActionEvent e) -> {
+            new JFrameCadastroCarro().setVisible(true);
+        });
+        jButtonListaCategorias.addActionListener((ActionEvent e) -> {
+            new JFrameListaCategorias().setVisible(true);
         });
     }
-    
-    
-    
-    
-    
+
 }
