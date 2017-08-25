@@ -17,13 +17,14 @@ public class CategoriaDAO {
 
     public int inserir(Categoria c) {
         int codInserido = Utilitarios.NAO_FOI_POSSIVEL_INSERIR;
-        String sql = "INSERT INTO categorias (nome,descricao)";
-        sql += "\n VALUE(?,?)";
+        String sql = "INSERT INTO categorias (nome,descricao, ativo)";
+        sql += "\n VALUE(?,?,?)";
         try {
             //Classe utilizada para criar o sql substituindo as interrogações
             PreparedStatement ps = Conexao.conectar().prepareStatement(sql, PreparedStatement.RETURN_GENERATED_KEYS);
             ps.setString(1, c.getNome());
             ps.setString(2, c.getDescricao());
+            ps.setBoolean(3, c.isAtivo());
             ps.execute();
             //classe que pega as informações que o bd retorna
             ResultSet resultSet = ps.getGeneratedKeys();
@@ -110,7 +111,7 @@ public class CategoriaDAO {
                 categoria = new Categoria();
                 categoria.setId(codigo);
                 categoria.setNome(rs.getString("nome"));
-                categoria.setDescricao(rs.getString("desscricao"));
+                categoria.setDescricao(rs.getString("descricao"));
                 categoria.setAtivo(rs.getBoolean("ativo"));
             }
 

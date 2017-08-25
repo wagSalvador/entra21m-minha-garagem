@@ -38,6 +38,18 @@
         descricao TEXT,
         ativo BOOLEAN DEFAULT FALSE #vai conter o valor false caso não for passado nada  no insert
     );
+   CREATE TABLE IF NOT EXISTS avioes(
+    id INTEGER PRIMARY KEY AUTO_INCREMENT,
+    id_categoria INTEGER NOT NULL,
+    FOREIGN KEY(id_categoria) REFERENCES categorias(id),
+    nome VARCHAR(100) NOT NULL UNIQUE
 
+    );
+INSERT INTO avioes (id_categoria, nome) VALUES (1,"TECOTECO"),
+(2,"Air bus A320"),
+(2,"Air bus 777"),
+(3,"Air bus 747");
+
+    
     INSERT INTO categoria (nome) VALUE('Executiva');
     INSERT INTO categoria (nome,descricao) VALUE('Média','Texto 2');
