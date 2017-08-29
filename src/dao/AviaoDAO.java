@@ -57,7 +57,7 @@ public class AviaoDAO {
     }
 
     public int alterar(Aviao aviao) {
-        String sql = "UPDATE avioes SET id_categoria = ?, nome = ?";
+        String sql = "UPDATE avioes SET id_categoria = ?, nome = ? WHERE id =?";
         int idAlterado = Utilitarios.NAO_FOI_POSSIVEL_ALTERAR;
         try {
             PreparedStatement ps = Conexao.conectar().prepareStatement(sql);
